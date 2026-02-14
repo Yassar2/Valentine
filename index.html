@@ -207,13 +207,14 @@ body.lock-scroll {
     .envelope-wrapper {
         width: 90%;
         height: 300px;
+        top : 10px;
     }
     .letter {
         padding: 30px;
     }
 }
 
-/* ================= MOBILE FIX OVERRIDE ================= */
+/* ================= MOBILE PERFECT FIX ================= */
 
 @media (max-width: 768px) {
 
@@ -223,43 +224,53 @@ body.lock-scroll {
     }
 
     .container {
-        padding: 15px;
-        overflow: visible;
+        align-items: flex-start !important;
+        padding-top: 40px;
+        overflow: hidden !important;
     }
 
-    .envelope-wrapper {
-        width: 95% !important;
-        height: 280px !important;
+    /* Saat dibuka, surat langsung gantikan envelope */
+    .envelope-wrapper.opened {
+        height: auto !important;
+    }
+
+    .envelope-wrapper.opened .letter {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .envelope-flap {
+        top: 90px !important;
+    }
+
+    /* Hilangkan posisi absolute supaya tidak terdorong ke bawah */
+    .letter {
+        top: 0 !important;
+    }
+
+    /* Scroll aktif setelah dibuka */
+    body.lock-scroll {
+        overflow: auto !important;
+    }
+
+    /* Gallery satu kolom */
+    .photo-gallery {
+        grid-template-columns: 1fr !important;
     }
 
     .click-text {
-        position: absolute;
         left: 50% !important;
-        transform: translateX(-50%) !important;
+        bottom: -40px !important;
         margin-left: 0 !important;
-        width: 100%;
+        transform: translateX(-50%) !important;
         text-align: center;
-        font-size: 14px;
+        width: 90%;
+        font-size: 18px;
     }
-
-    .letter {
-        width: 95% !important;
-        padding: 25px !important;
-    }
-
-    .message h1 {
-        font-size: 1.6rem !important;
-    }
-
-    .message p {
-        font-size: 1rem !important;
-    }
-
-    .photo-gallery {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
 }
 </style>
 </head>
