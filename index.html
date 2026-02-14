@@ -212,6 +212,55 @@ body.lock-scroll {
         padding: 30px;
     }
 }
+
+/* ================= MOBILE FIX OVERRIDE ================= */
+
+@media (max-width: 768px) {
+
+    html, body {
+        margin-left: 0 !important;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 15px;
+        overflow: visible;
+    }
+
+    .envelope-wrapper {
+        width: 95% !important;
+        height: 280px !important;
+    }
+
+    .click-text {
+        position: absolute;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin-left: 0 !important;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .letter {
+        width: 95% !important;
+        padding: 25px !important;
+    }
+
+    .message h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .message p {
+        font-size: 1rem !important;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+}
 </style>
 </head>
 
